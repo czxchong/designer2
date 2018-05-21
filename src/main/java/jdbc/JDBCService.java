@@ -6,6 +6,27 @@ package jdbc;
 * 类说明
 */
 
-public class JDBCService {
+public class JDBCService implements JDBCServiceDao{
+	private static volatile JDBCService jdbcService ;
+	
+	private JDBCService() {
+		
+	}
+	
+	public static JDBCService getInstance() {
+		System.out.println("jdbcService1:"+Thread.currentThread().getName());
+		if(jdbcService == null) {
+			//System.out.println("jdbcService2:"+Thread.currentThread().getName());
+			synchronized (JDBCService.class) {
+				System.out.println("jdbcService2:"+Thread.currentThread().getName());
+				if(jdbcService == null) {
+					System.out.println("jdbcService3:"+Thread.currentThread().getName());
+					jdbcService = new JDBCService();
+					System.out.println("jdbcService4:"+Thread.currentThread().getName());
+				}
+			}
+		}
+		return jdbcService;
+	}
 
 }

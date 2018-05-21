@@ -6,6 +6,8 @@ package jdbc;
 * 类说明
 */
 
-public class JDBCDao {
+public interface JDBCServiceDao {
+	
+	//public <T> getT
 
 }
