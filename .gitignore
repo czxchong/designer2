@@ -1,3 +1,7 @@
 
 .settings/org.eclipse.wst.common.component
 
+/target/
+*.iml
+.idea/*
+target/*

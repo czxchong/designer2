@@ -1,5 +1,7 @@
 package jdbc;
 
+import java.sql.Date;
+
 /**
 * @author xchong E-mail: 1305257719@qq.com
 * @version 创建时间：2018年5月20日 上午9:23:52
@@ -27,6 +29,12 @@ public class JDBCService implements JDBCServiceDao{
 			}
 		}
 		return jdbcService;
+	}
+	
+	
+	public void sysout() {
+		Long cur = System.currentTimeMillis();
+		System.out.println(Thread.currentThread().getName()+"--->"+cur);
 	}
 
 }
